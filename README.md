@@ -1,4 +1,4 @@
-Choices for Rails
+ChoicesSettings for Rails _(Previously [Choices](https://github.com/mislav/choices))_
 =================
 
 _Forked from [mislav/choices](https://github.com/mislav/choices)_

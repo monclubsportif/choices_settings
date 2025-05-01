@@ -1,12 +1,12 @@
 Gem::Specification.new do |gem|
   gem.name    = 'choices_settings'
-  gem.version = '0.5.0'
+  gem.version = '0.5.1'
 
-  gem.add_dependency 'hashie', '>= 0.4.0'
+  gem.add_runtime_dependency 'hashie', '>= 0.4.0'
   gem.add_development_dependency 'minitest', '~> 5.0.6'
 
   gem.summary = 'Easy settings for your app'
-  # gem.description = "Longer description."
+  gem.description = '_Forked from [mislav/choices](https://github.com/mislav/choices)_'
 
   gem.authors  = ['Mislav Marohnić', 'MonClubSportif']
   gem.email    = 'info@monclubsportif.com'

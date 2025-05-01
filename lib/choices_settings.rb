@@ -2,7 +2,7 @@ require 'hashie/mash'
 require 'erb'
 require 'yaml'
 
-module Choices
+module ChoicesSettings
   extend self
 
   def load_settings(filename, env)
@@ -44,4 +44,4 @@ module Choices
   end
 end
 
-require 'choices/rails' if defined? Rails
+require 'choices_settings/rails' if defined? Rails
