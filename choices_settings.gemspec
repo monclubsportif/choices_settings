@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name    = 'choices_settings'
-  gem.version = '0.5.1'
+  gem.version = '0.5.2'
 
   gem.required_ruby_version = '>= 2.0'
   gem.add_runtime_dependency 'hashie', '~> 5.0.0'
