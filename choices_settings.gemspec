@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'minitest', '~> 5.0.6'
 
   gem.summary = 'Easy settings for your app'
-  gem.description = '_Forked from [mislav/choices](https://github.com/mislav/choices)_'
+  gem.description = 'Forked from mislav/choices (https://github.com/mislav/choices)'
 
   gem.authors  = ['Mislav Marohnić', 'MonClubSportif']
   gem.email    = 'info@monclubsportif.com'
