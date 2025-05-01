@@ -1,11 +1,13 @@
 Choices for Rails
 =================
 
+_Forked from [mislav/choices](https://github.com/mislav/choices)_
+
 Easy-peasy external settings for your Rails app.
 
 ~~~ rb
 # Gemfile
-gem 'choices'
+gem 'choices_settings'
 ~~~
 
 In your app initializer block:

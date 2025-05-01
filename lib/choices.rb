@@ -4,16 +4,16 @@ require 'yaml'
 
 module Choices
   extend self
-  
+
   def load_settings(filename, env)
     mash = Hashie::Mash.new(load_settings_hash(filename))
-    
+
     with_local_settings(filename, '.local') do |local|
       mash.update local
     end
 
     mash.fetch(env) do
-      raise IndexError, %{Missing key for "#{env}" in `#{filename}'}
+      raise IndexError, %(Missing key for "#{env}" in `#{filename}')
     end
   end
 
@@ -21,15 +21,15 @@ module Choices
     yaml_content = ERB.new(IO.read(filename)).result
     yaml_load(yaml_content)
   end
-  
+
   def with_local_settings(filename, suffix)
     local_filename = filename.sub(/(\.\w+)?$/, "#{suffix}\\1")
-    if File.exists? local_filename
-      hash = load_settings_hash(local_filename)
-      yield hash if hash
-    end
+    return unless File.exist? local_filename
+
+    hash = load_settings_hash(local_filename)
+    yield hash if hash
   end
-  
+
   def yaml_load(content)
     if defined?(YAML::ENGINE) && defined?(Syck)
       # avoid using broken Psych in 1.9.2
@@ -37,13 +37,11 @@ module Choices
       YAML::ENGINE.yamler = 'syck'
     end
     begin
-      YAML::load(content)
+      YAML.load(content, aliases: true)
     ensure
       YAML::ENGINE.yamler = old_yamler if defined?(YAML::ENGINE) && defined?(Syck)
     end
   end
 end
 
-if defined? Rails
-  require 'choices/rails'
-end
+require 'choices/rails' if defined? Rails
